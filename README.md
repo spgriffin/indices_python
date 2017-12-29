@@ -47,7 +47,7 @@ Checkout the 'develop' branch:
 
     `$ git checkout -b develop`
 
-#### Configure Python environment
+#### Configure the Python environment
 This project's code is written for Python 3. It's recommended that you use an installation of the [Anaconda](https://www.continuum.io/why-anaconda) Python 3 distribution. The below instructions will be Anaconda specific, and initially aimed at Linux users.
 
 For users without an existing Python/Anaconda installation we recommend either 
@@ -60,35 +60,35 @@ This library and the example processing scripts use the [netCDF4](https://unidat
 
 A new Anaconda [environment](https://conda.io/docs/using/envs.html) containing all required modules can be created through the use of the provided `environment.yml` file, which specifies an environment named **_indices_reference_** containing all required modules:
 
-    `$ conda env create -f environment.yml`
+`$ conda env create -f environment.yml`
 
 Windows users should comment out the entry for PyNCO as it is not available yet for Windows and it conda's environment creation script will fail if it encounters a missing dependency. To do this prepend the line with a hashtag/pound sign at the first column:
 
-    `#  - pynco`
+`#  - pynco`
  
 The environment created by the above command can be activated using the following command:
 
-    `$ source activate indices_python`
+`$ source activate indices_python`
 
 Once the *conda Python environment has been activated then subsequent Python commands will run in this environment where the package dependencies for this project are present.
  
 For users who'd prefer to not utilize the above approach using the provided `environment.yml` file, the required module dependencies can be installed instead into an Anaconda environment piecemeal via multiple `conda install` commands:
 
-    `$ conda create --name <env_name> python=3` 
+`$ conda create --name <env_name> python=3` 
 
-    `$ source activate <env_name>` 
+`$ source activate <env_name>` 
 
-    `$ conda install numba` 
+`$ conda install numba` 
 
-    `$ conda install scipy` 
+`$ conda install scipy` 
 
-    `$ conda install netCDF4` 
+`$ conda install netCDF4` 
 
-    `$ conda install pycurl`
+`$ conda install pycurl`
 
 Optionally install the package into the local site-packages:
 
-    `$ python setup.py install`
+`$ python setup.py install`
 
 ## Testing
 
