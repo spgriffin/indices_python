@@ -37,15 +37,15 @@ These initial Python implementations of these climate indices algorithms is bein
 #### Access the code
 Clone this repository:
     
-    `$ git clone https://github.com/monocongo/indices_python.git`
+`$ git clone https://github.com/monocongo/indices_python.git`
 
 Move into the source directory:
     
-    `$ cd indices_python`
+`$ cd indices_python`
 
 Checkout the 'develop' branch:
 
-    `$ git checkout -b develop`
+`$ git checkout -b develop`
 
 #### Configure the Python environment
 This project's code is written for Python 3. It's recommended that you use an installation of the [Anaconda](https://www.continuum.io/why-anaconda) Python 3 distribution. The below instructions will be Anaconda specific, and initially aimed at Linux users.
@@ -163,7 +163,7 @@ This script has the following required command line arguments:
 ## Get involved
 Please use, make suggestions, and contribute to this code. Without diverse participation and community adoption this project will not reach its potential. 
 
-Are you aware of other indices that would be a good addition here? Can you find bottlenecks and help improve performance? Want to take the Pepsi Challenge comparing these implementations against others? Please fork the code and have at it, and/or contact us to see if we can help.
+Are you aware of other indices that would be a good addition here? Can you find bottlenecks and help improve performance? Want to perform a Pepsi Challenge comparing these implementations against others? Please fork the code and have at it, and/or contact us to see if we can help.
 
 * Read our [contributing guidelines](https://github.com/monocongo/indices_python/blob/master/CONTRIBUTING.md)
 * File an [issue](https://github.com/monocongo/indices_python/issues), or submit a pull request
