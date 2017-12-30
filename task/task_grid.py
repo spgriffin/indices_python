@@ -6,7 +6,8 @@ import multiprocessing
 import netCDF4
 import netcdf_utils
 import numpy as np
-from process import process_grid
+# from process import process_grid
+import process_grid
 import random
 import utils
 
@@ -113,10 +114,26 @@ if __name__ == '__main__':
                             help="Valid values are \'nclimgrid\' and \'prism\'", 
                             required=True)
         parser.add_argument("--source_dir", 
-                            help="Base directory under which are directories and files for precipitation and max/min/mean temperature", 
+                            help="Base directory under which are directories and ASCII data files for grid precipitation and max/min/mean temperature", 
                             required=True)
-        parser.add_argument("--output_dir", 
-                            help="Directory under which the output NetCDF files will be written", 
+        parser.add_argument("--output_file_base",
+                            help="Base output file path and name for the resulting output files",
+                            required=True)
+        parser.add_argument("--month_scales",
+                            help="Month scales over which the PNP, SPI, and SPEI values are to be computed",
+                            type=int,
+                            nargs = '*',
+                            choices=range(1, 73),
+                            required=True)
+        parser.add_argument("--calibration_start_year",
+                            help="Initial year of calibration period",
+                            type=int,
+                            choices=range(1870, start_datetime.year + 1),
+                            required=True)
+        parser.add_argument("--calibration_end_year",
+                            help="Final year of calibration period",
+                            type=int,
+                            choices=range(1870, start_datetime.year + 1),
                             required=True)
         args = parser.parse_args()
 
@@ -153,12 +170,12 @@ if __name__ == '__main__':
         
         # perform the processing
         process_grid.process_grid(args.output_file_base,
-                                  args.precip_file,
-                                  args.temp_file,
-                                  args.awc_file,
-                                  args.precip_var_name,
-                                  args.temp_var_name,
-                                  args.awc_var_name,
+                                  precip_file,
+                                  temp_file,
+                                  awc_file,
+                                  precip_var_name,
+                                  temp_var_name,
+                                  awc_var_name,
                                   args.month_scales,
                                   args.calibration_start_year,
                                   args.calibration_end_year)

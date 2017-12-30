@@ -6,7 +6,7 @@ import multiprocessing
 import netCDF4
 import netcdf_utils
 import numpy as np
-from process import process_divisions
+import indices_python.process.process_divisions as process_divisions
 import random
 import utils
 
